@@ -11,3 +11,25 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 });
+
+//create worker modal
+$(document).ready(function() {
+  $('#submit-btn').click(function() {
+    $('#createWorkerModal').modal('show');
+  });
+
+  $('#workerForm').submit(function(event) {
+    event.preventDefault();
+    // Handle form submission logic here
+    // Example: Retrieve form input values and perform actions with them
+    var workerName = $('#workerName').val();
+    var workerEmail = $('#workerEmail').val();
+    var workerPhone = $('#workerPhone').val();
+    var workerRole = $('#workerRole').val();
+    var workerAddress = $('#workerAddress').val();
+
+  });
+});
+
+
+

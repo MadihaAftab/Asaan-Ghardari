@@ -438,3 +438,16 @@ color: Maroon;}
 .bi-calendar {
   margin-right: 10px;
 }
+
+//create worker modal
+
+.modal-body{
+    position: relative;
+}
+
+.form-group.text-end {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+
