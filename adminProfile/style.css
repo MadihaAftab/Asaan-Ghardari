@@ -365,17 +365,76 @@ color: Maroon;}
   font-weight: bold;
   color: maroon !important;
 }
-#jobs-card{
-   margin-top:25px;
-   margin-left: 2px;
-   margin-right: 2px;
-}
-#jobs-card h3{
-  color: grey !important;
-  font-size: 20px !important;
-}
 .badge {
     display: flex;
     justify-content: center !important;
     align-items: center !important;
+}
+/*job details page*/
+#fixed-cards{
+  margin-top: 40px;
+  width: 100%;
+  margin-left: 45px;
+}
+
+#card-three{
+  margin-top: 25px;
+  margin-left: -384px;
+}
+#main_section{
+  margin-top:25px;}
+
+#job-details-card{
+  margin-top: 25px;
+  border-color: transparent !important;
+  padding: 15px;
+  }
+
+.btn-outline-primary{
+  display: border-box !important;
+  position: relative !important;
+  width:140px !important;
+  height: 40px;
+}
+
+.card-body h5{
+  color: gray !important;}
+
+.avatar-group{
+  display: flex;
+  align-items: center !important;}
+.avatar-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: normal;
+  color: black;
+  font-size: 20px;
+}
+.avatar-img::before {
+  content: attr(data-initial);
+}
+.avatar-info p, .avatar-info h6 {
+  display: inline-block !important;
+  margin: 0px !important;
+  vertical-align: middle;
+  margin-left: 50px !important;
+}
+.avatar-line {
+   height: 2px;
+   width: 100%;
+   background-color: #ddd;
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+.bi {
+  font-size: 24px;
+  color: #333;
+}
+.bi-calendar {
+  margin-right: 10px;
 }
