@@ -1,3 +1,19 @@
+//clickable job rows admin page
+document.addEventListener("DOMContentLoaded", function() {
+  var table = document.getElementById("myTable2");
+  var rows = table.getElementsByTagName("tr");
+  for (var i = 0; i < rows.length; i++) {
+    var row = rows[i];
+    row.addEventListener("click", function() {
+      var link = this.dataset.href;
+      if (link) {
+        window.location.href = "job_Details.html";
+      }
+    });
+  }
+});
+
+//clickable job rows customer page
 document.addEventListener("DOMContentLoaded", function() {
   var table = document.getElementById("myTable");
   var rows = table.getElementsByTagName("tr");
@@ -6,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
     row.addEventListener("click", function() {
       var link = this.dataset.href;
       if (link) {
-        window.location.href = "job_Details.html";
+        window.location.href = "jobDetails.html";
       }
     });
   }
@@ -20,8 +36,7 @@ $(document).ready(function() {
 
   $('#workerForm').submit(function(event) {
     event.preventDefault();
-    // Handle form submission logic here
-    // Example: Retrieve form input values and perform actions with them
+   //Retrieve form input values and perform actions with them
     var workerName = $('#workerName').val();
     var workerEmail = $('#workerEmail').val();
     var workerPhone = $('#workerPhone').val();
