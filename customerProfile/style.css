@@ -205,6 +205,8 @@ color: Maroon;}
   vertical-align: middle;
   margin-left: 50px !important;
 }
+.avatar-info p{
+  font-size:12px;}
 .avatar-line {
    height: 2px;
    width: 100%;

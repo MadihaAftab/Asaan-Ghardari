@@ -11,7 +11,8 @@
 			body{
 			   font-family: "Lato", sans-serif !important;
                background-color: #f9f9fa !important;
-               z-index: 0 !important;}
+               z-index: 0 !important;
+               }
 
 		</style>
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -20,6 +21,7 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 <body>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
@@ -44,7 +46,69 @@
                              <div class="d-flex justify-content-between align-items-center">
                                  <h3>Job Details</h3>
                                  <div>
-                                    <button type="button" class="btn btn-outline-primary">Assign Workers</button>
+                                    <button type="button" id="assignBtn" class="btn btn-outline-primary text-color-custom" style="border-color: Maroon; " >Assign Workers</button>
+                                     <div class="modal fade" id="workerModal" tabindex="-1" role="dialog" aria-labelledby="workerModalLabel" aria-hidden="true">
+                                          <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                              <div class="modal-header">
+                                                <h5 class="modal-title" id="workerModalLabel">Select Workers</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                  <span aria-hidden="true">&times;</span>
+                                                </button>
+                                              </div>
+                                              <div class="modal-body" >
+                                              <!-- Worker List -->
+                                                  <div class="form-check" id="CheckForm">
+                                                    <div class="avatar-group">
+                                                        <input class="form-check-input" type="checkbox" id="worker1">
+                                                        <div class="avatar-img" data-initial="KA"></div>
+                                                        <div class="avatar-info" >
+                                                            <label class="form-check-label" for="worker1"><h6>Kinza Akhtar</h6></label> <br>
+                                                            <p>Plumber</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="avatar-line"></div>
+                                                    <div class="avatar-group" >
+                                                        <input class="form-check-input" type="checkbox" id="worker2">
+                                                        <div class="avatar-img" data-initial="MA"></div>
+                                                        <div class="avatar-info" >
+                                                            <label class="form-check-label" for="worker1"><h6>Madiha Aftab</h6></label> <br>
+                                                            <p>Plumber</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="avatar-line"></div>
+                                                    <div class="avatar-group">
+                                                        <input class="form-check-input" type="checkbox" id="worker3">
+                                                        <div class="avatar-img" data-initial="JD"></div>
+                                                        <div class="avatar-info">
+                                                            <label class="form-check-label" for="worker3"><h6>John Doe</h6></label> <br>
+                                                            <p>Carpenter</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="avatar-line"></div>
+                                                    <div class="avatar-group">
+                                                        <input class="form-check-input" type="checkbox" id="worker4">
+                                                        <div class="avatar-img" data-initial="ZJ"></div>
+                                                        <div class="avatar-info">
+                                                            <label class="form-check-label" for="worker4"><h6>Zack Jay</h6></label> <br>
+                                                            <p>Carpenter</p>
+                                                        </div>
+                                                    </div>
+                                            </div>
+
+                                              <div class="modal-footer">
+                                                  <div class="container">
+                                                    <div class="row">
+                                                      <div class="col-sm-12">
+                                                        <button type="button" class="btn btn-secondary btn-block"
+                                                         style="margin-right:100px; background-color: Maroon; border-color: Maroon;">Assign</button>
+                                                      </div>
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                     </div>
                                  </div>
                              </div>
                         </div>
@@ -101,6 +165,9 @@
             </div>
             </div>
         </div>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
 </body>
 </html>

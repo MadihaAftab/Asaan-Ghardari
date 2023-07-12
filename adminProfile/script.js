@@ -27,9 +27,19 @@ $(document).ready(function() {
     var workerPhone = $('#workerPhone').val();
     var workerRole = $('#workerRole').val();
     var workerAddress = $('#workerAddress').val();
-
   });
 });
+
+//assign worker modal
+ document.addEventListener('DOMContentLoaded', function() {
+      var assignBtn = document.querySelector('#assignBtn');
+      var modal = new bootstrap.Modal(document.getElementById('workerModal'));
+
+      assignBtn.addEventListener('click', function() {
+        modal.show();
+      });
+    });
+
 
 
 

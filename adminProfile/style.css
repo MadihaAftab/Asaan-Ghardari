@@ -400,6 +400,7 @@ color: Maroon;}
 .card-body h5{
   color: gray !important;}
 
+/*assigned workers avatars styling*/
 .avatar-group{
   display: flex;
   align-items: center !important;}
@@ -431,6 +432,10 @@ color: Maroon;}
    margin-top: 10px;
    margin-bottom: 10px;
 }
+.avatar-info p{
+  font-size:12px;}
+
+
 .bi {
   font-size: 24px;
   color: #333;
@@ -439,15 +444,42 @@ color: Maroon;}
   margin-right: 10px;
 }
 
-//create worker modal
+/*create worker modal*/
 
 .modal-body{
     position: relative;
 }
+#workerForm{
+   padding: 10px 50px 40px 50px;
+}
+/*assign button styling*/
+#assignBtn:hover{
+   background-color: Maroon !important;
+ }
+.text-color-custom{
+  color: Maroon !important;}
 
-.form-group.text-end {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-  }
+.text-color-custom:hover{
+  color: white !important;}
+
+/*assign worker avatars styling*/
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: red;
+  color: black;
+  font-weight: normal;
+}
+
+.initials {
+  font-size: 18px;
+}
+
+
+
+
 
