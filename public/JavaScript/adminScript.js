@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     row.addEventListener("click", function() {
       var link = this.dataset.href;
       if (link) {
-        window.location.href = "job_Details.html";
+        window.location.href = "job_Details";
       }
     });
   }

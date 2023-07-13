@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Login Page</title>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+				box-sizing: border-box;
+			}
+			body {
+				background-color: 	#FFF8DC !important;
+			}
+			.row{
+			    background-color: #FFEBCD;
+			    border-radius: 30px;
+			    box-shadow: 12px 12px 22px #DCDCDC;
+			}
+			img{
+				border-top-left-radius: 30px;
+				border-bottom-left-radius: 30px;
+				width: 104.5%;
+			}
+			.btn1{
+				border:none;
+				outline: none;
+				height: 50px;
+				width: 100%;
+				background-color: maroon;
+				border-color: maroon;
+				color: white;
+				border-radius: 4px;
+				font-weight: bold;
+			}
+			.btn1:hover{
+				background: #B22222;
+				border-color: maroon;
+			}
+			.col-lg-7 p{
+				color:gray;
+				font-size:1rem;
+			}
+
+		</style>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	</head>
+	<body>
+		<section class="Form my-5 mx-5">
+			<div class="container">
+				<div class="row no-gutters">
+					<div class="col-lg-5">
+						<img src="../../public/Images/dashboard.jpg" class="image-fluid" alt="image">
+					</div>
+					<div class="col-lg-7 px-5 pt-5">
+						<h1 class="font-weight-bold py-3">Asaan Ghardari</h1>
+						<p>Sign into your account</p>
+						<form action="/auth/" method="post">
+							<div class="form-row">
+								<div class="col-lg-8">
+									<input type="email" placeholder="Email Address" class="form-control my-2 p-4" name ="email" required>
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="col-lg-8">
+									<input type="password" placeholder="Password" class="form-control my-2 p-4" name="password" required>
+								</div>
+							</div>
+							<div class="form-row">
+								<div class="col-lg-8">
+									<a href="Dashboard.html"><button type="submit" class="btn1 mt-3 mb-3">Login</button></a>
+								</div>
+							</div>
+							<p>Are You A Customer? <a href="../customerProfile/RegisterCustomer">Register Here</a> </p>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	</body>
+</html>
