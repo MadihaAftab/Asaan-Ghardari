@@ -35,10 +35,10 @@ router.get('/adminProfile/Workers',function(req,res){
     res.render('adminProfile/Workers'); //views is already set as a root folder and also dont use .ejs thats also already set
 
 });
-router.get('/adminProfile/Settings',function(req,res){
-    res.render('adminProfile/Settings'); //views is already set as a root folder and also dont use .ejs thats also already set
+// router.get('/adminProfile/Settings',function(req,res){
+//     res.render('adminProfile/Settings'); //views is already set as a root folder and also dont use .ejs thats also already set
 
-});
+// });
 router.get('/adminProfile/Login',function(req,res){
     res.redirect('/'); //views is already set as a root folder and also dont use .ejs thats also already set
 
@@ -46,6 +46,24 @@ router.get('/adminProfile/Login',function(req,res){
 
 router.get('/adminProfile/job_Details',function(req,res){
     res.render('adminProfile/job_Details'); //views is already set as a root folder and also dont use .ejs thats also already set
+
+});
+
+
+router.get('/CustomerProfile',function(req,res){
+    res.render('customerProfile/CustomerProfile'); //views is already set as a root folder and also dont use .ejs thats also already set
+
+});
+router.get('/customerProfile/CustomerProfile',function(req,res){
+    res.render('customerProfile/CustomerProfile'); //views is already set as a root folder and also dont use .ejs thats also already set
+
+});
+router.get('/customerProfile/jobDetails',function(req,res){
+    res.render('customerProfile/jobDetails'); //views is already set as a root folder and also dont use .ejs thats also already set
+
+});
+router.get('/customerProfile/editProfile',function(req,res){
+    res.render('customerProfile/editProfile'); //views is already set as a root folder and also dont use .ejs thats also already set
 
 });
 
