@@ -1,12 +1,6 @@
-var db = require("../routes/db-config")
 const bcrypt = require('bcryptjs')
-
-
-db.connect((err)=>{
-    if (err) throw err;
-    console.log("db from auth.js")
-})
-
+const jwt = require('jsonwebtoken')
+const db = require ('../db');
 
 exports.register = (req,res)=>{
     console.log(req.body);
@@ -25,7 +19,8 @@ exports.register = (req,res)=>{
                     console.log(error);
                 }
                 else{
-                    res.redirect('/CustomerProfile');
+                    
+                    res.redirect('/');
                     return
                 }
             })
@@ -37,16 +32,28 @@ exports.login = (req,res)=>{
     console.log(req.body);
     const {email ,password } =req.body;
     if(email == "admin123@asaanghardari.com" && password == "1234"){
-        return  res.redirect("/dashboard");
+        const token = jwt.sign({id:"admin"},process.env.JWT_SECRET,{
+            expiresIn: process.env.JWT_EXPIRES
+        })
+        res.cookie("admin",token,{
+        expires:new Date(Date.now()+50000),
+        httpOnly : true,
+       });
+        return  res.redirect("/adminProfile/Dashboard");
     }
     db.query('SELECT * FROM custumers WHERE email = ?' ,[email], async (error,results)=> {
         if (error) throw error;     
         if(!results[0] || !(await bcrypt.compare(password,results[0].password))) return res.json({status:"error",error:"Incorrect Email or password"})
 
         else{
-            console.log(results[0].email)
-            console.log(results[0].password)
-            res.redirect("/CustomerProfile");
+            const token = jwt.sign({id:results[0].Id},process.env.JWT_SECRET,{
+                        expiresIn: process.env.JWT_EXPIRES
+                    })
+                    const cookieOptions ={
+                        expiresIn:new Date(Date.now()+process.env.COOKIE_EXPIRES*24*60*60*1000)
+                    }
+                    res.cookie("UserRegistered",token,cookieOptions);
+            res.redirect("/customerProfile/CustomerProfile");
         }
     }
     )}

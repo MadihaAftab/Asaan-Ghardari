@@ -42,43 +42,54 @@
                                 <div class="card-body text-right">
                                     <h1 class="card-title">Jobs</h1>
                                 </div>
-                                <div class="table-responsive" id="myTable2">
-                                    <table class="table table-hover">
-									<thead>
-										<tr>
-											<th>Job Title</th>
-											<th>Job Date</th>
-											<th>Assigned Worker</th>
-											<th>Job Status</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr data-href="../adminProfile/job_Details">
-											<td>Customer name + job date + no of Assigned workers + Location</td>
-											<td>Mar 10 2023</td>
-											<td style="padding-left: 30px;">3</td>
-											<td ><span class="badge text-bg-danger">Pending</span></td>
-										</tr>
-										<tr data-href="../adminProfile/job_Details">
-											<td>Customer name + job date + no of Assigned workers + Location</td>
-											<td>Mar 10 2023</td>
-											<td style="padding-left: 30px;">3</td>
-											<td><span class="badge text-bg-success">Completed</span></td>
-										</tr>
-										<tr data-href="../adminProfile/job_Details">
-											<td>Customer name + job date + no of Assigned workers + Location</td>
-											<td>Mar 17 2023</td>
-											<td style="padding-left: 30px;">7</td>
-											<td ><span class="badge text-bg-warning">Booked</span></td>
-										</tr>
-										<tr data-href="../adminProfile/job_Details">
-											<td>Customer name + job date + no of Assigned workers + Location</td>
-											<td>Mar 13 2023</td>
-											<td style="padding-left: 30px;">5</td>
-											<td><span class="badge text-bg-danger">Pending</span></td>
-										</tr>
-									</tbody>
-								</table>
+								<% if(action=='add' ) {%>
+									<% } else {%>
+		
+										<div class="table-responsive">
+											<table class="table table-hover">
+												<thead>
+													<tr>
+														<th>JobID</th>
+														<th>Type</th>
+														<th>Date</th>
+														<th>Location</th>
+														
+													</tr>
+												<!-- <tbody> -->
+														<%
+														if(jobs.length >0){
+															jobs.forEach(function(jobdata){
+														%>
+														<tr data-href="./job_Details">
+															<td><%= jobdata.Job_id %></td>
+															<td><%= jobdata.type %></td>
+															<td><%= jobdata.date %></td>
+															<td><%= jobdata.location %></td>
+															
+															<!-- <td><%= jobdata.email %></td> -->
+															<!-- <td><%= jobdata.phone %></td> -->
+															<td></td>
+														</tr>
+														<%
+															});
+		
+													   
+														}
+														else
+														{
+														%>
+														<tr>
+															<td colspan="5">No Data Found</td>
+														</tr>    
+														<%
+														}
+														%>
+											</table>
+		
+										</div>
+		
+										<% } %>
+		
 							</div>
 					</div>
 				</div>

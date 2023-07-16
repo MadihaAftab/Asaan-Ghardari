@@ -54,22 +54,22 @@
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                           </div>
                                           <div class="modal-body">
-                                            <form id="workerForm">
+                                            <form action="/auth/adminProfile/Workers" method="post" id="workerForm">
                                               <div class="mb-3">
                                                 <label for="workerName" class="form-label">Name</label>
-                                                <input type="text" class="form-control" id="workerName" required>
+                                                <input type="text" class="form-control" id="workerName" name="name" required>
                                               </div>
                                               <div class="mb-3">
                                                 <label for="workerEmail" class="form-label">Email</label>
-                                                <input type="email" class="form-control" id="workerEmail" required>
+                                                <input type="email" class="form-control" id="workerEmail" name="email" required>
                                               </div>
                                               <div class="mb-3">
                                                 <label for="workerPhone" class="form-label">Phone No</label>
-                                                <input type="tel" class="form-control" id="workerPhone" required>
+                                                <input type="tel" class="form-control" id="workerPhone" name="phone" required>
                                               </div>
                                               <div class="mb-3">
                                                 <label for="workerRole" class="form-label">Role</label>
-                                                <select class="form-control" id="workerRole" required>
+                                                <select class="form-control" id="workerRole" name="type" required>
                                                     <option value="">--Select Role</option>
                                                     <option value="plumber">Plumber</option>
                                                     <option value="mechanic">Mechanic</option>
@@ -81,7 +81,7 @@
                                               </div>
                                               <div class="mb-3">
                                                 <label for="workerAddress" class="form-label">Address</label>
-                                                <input type="text" class="form-control" id="workerAddress" required>
+                                                <input type="text" class="form-control" id="workerAddress" name="location" required>
                                               </div>
                                               <div  class="form-group">
                                                  <button type="submit" class="btn btn-primary" style="background-color: Maroon;border-color: Maroon; margin-left:600px;">Create</button>
@@ -95,68 +95,55 @@
 
                                     <h1 class="card-title">Workers</h1>
                                 </div>
-                                <div class="table-responsive">
-                                    <table class="table table-hover">
-                                        <thead>
-                                        <tr>
-                                            <th>Worker Id</th>
-                                            <th>Name</th>
-                                            <th>Email</th>
-                                            <th>Phone No</th>
-											<th>Role</th>
-                                            <th>Address</th>
-                                            <th>Created at</th>
-                                        </tr>
-                                        </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td>001</td>
-                                            <td>Samso Park</td>
-                                            <td>samsopark@abc.com</td>
-                                            <td>03234424433</td>
-											<td>Mechanic</td>
-                                            <td>Karachi University</td>
-                                            <td>12 May 2017</td>
-                                        </tr>
-                                        <tr>
-                                            <td>002</td>
-                                            <td>Marlo Sanki</td>
-                                            <td>marlosanki@abc.com</td>
-                                            <td>02353425532</td>
-											<td>Plumber</td>
-                                            <td>Malir Cantt</td>
-                                            <td>15 May 2015</td>
-                                        </tr>
-                                        <tr>
-                                            <td>003</td>
-                                            <td>John ryte</td>
-                                            <td>johnryte@abc.com</td>
-                                            <td>02353275533</td>
-											<td>Electrician</td>
-                                            <td>Nazimabad</td>
-                                            <td>14 May 2017</td>
-                                        </tr>
-                                        <tr>
-                                            <td>004</td>
-                                            <td>Peter mark</td>
-                                            <td>petermark@abc.com</td>
-                                            <td>02353275534</td>
-											<td>Sweeper</td>
-                                            <td>New karachi</td>
-                                            <td>16 May 2017</td>
-                                        </tr>
-                                        <tr>
-                                            <td>005</td>
-                                            <td>Dave</td>
-                                            <td>dave@abc.com</td>
-                                            <td>02353275535</td>
-											<td>Handy Man</td>
-                                            <td>Korangi</td>
-                                            <td>20 May 2017</td>
-                                        </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                <% if(action=='add' ) {%>
+                                    <% } else {%>
+    
+                                        <div class="table-responsive">
+                                            <table class="table table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Worker Id</th>
+                                                        <th>Name</th>
+                                                        <th>Email</th>
+                                                        <th>Phone No</th>
+                                                        <th>Role</th>
+                                                        <th>Address</th>
+                                                        <th>Created at</th>
+                                                    </tr>
+                                                </thead>
+                                                        <%
+                                                        if(sampleData.length >0){
+                                                            sampleData.forEach(function(data){
+                                                        %>
+                                                        <tr>
+                                                            <td><%= data.id %></td>
+                                                            <td><%= data.name %></td>
+                                                            <td><%= data.email %></td>
+                                                            <td><%= data.phone %></td>
+                                                            <td><%= data.type %></td>
+                                                            <td><%= data.location %></td>
+                                                            <td><%= data.created_at %></td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <%
+                                                            });
+    
+                                                       
+                                                        }
+                                                        else
+                                                        {
+                                                        %>
+                                                        <tr>
+                                                            <td colspan="5">No Worker Found</td>
+                                                        </tr>    
+                                                        <%
+                                                        }
+                                                        %>
+                                            </table>
+    
+                                        </div>
+    
+                                        <% } %>
                             </div>
                         </div>
                     </div>

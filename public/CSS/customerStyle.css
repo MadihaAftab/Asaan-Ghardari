@@ -131,11 +131,13 @@ color: Maroon;}
   color: maroon !important;
 }
 #jobs-card{
+   position: relative;
    margin-top:25px;
    margin-left: 4px;
    width: 99%;
    padding-top: 5px;
 }
+
 #jobs-card h3{
   color: grey !important;
   font-size: 20px !important;
@@ -222,5 +224,6 @@ color: Maroon;}
   margin-right: 10px;
 }
 
-
-
+#JobForm{
+   padding: 10px 50px 40px 50px;
+}

@@ -7,12 +7,26 @@ document.addEventListener("DOMContentLoaded", function() {
     row.addEventListener("click", function() {
       var link = this.dataset.href;
       if (link) {
-        window.location.href = "/customerProfile/jobDetails";
+        window.location.href = "jobDetails";
       }
     });
   }
 });
 
+//create job modal
+$(document).ready(function() {
+  $('#assign-Btn').click(function() {
+    $('#createJobModal').modal('show');
+    console.log("create job modal")
+  });
 
-
-
+//   $('#JobForm').submit(function(event) {
+//     event.preventDefault();
+//    //Retrieve form input values and perform actions with them
+//     var workerName = $('#workerName').val();
+//     var workerEmail = $('#workerEmail').val();
+//     var workerPhone = $('#workerPhone').val();
+//     var workerRole = $('#workerRole').val();
+//     var workerAddress = $('#workerAddress').val();
+//   });
+});
